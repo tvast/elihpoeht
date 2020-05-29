@@ -3,7 +3,9 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import './registerServiceWorker'
+import VueAgile from 'vue-agile'
 
+Vue.use(VueAgile)
 Vue.config.productionTip = false
 
 new Vue({
