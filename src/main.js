@@ -5,6 +5,10 @@ import store from './store'
 import './registerServiceWorker'
 import VueAgile from 'vue-agile'
 
+import AudioVisual from 'vue-audio-visual'
+
+Vue.use(AudioVisual)
+
 Vue.use(VueAgile)
 Vue.config.productionTip = false
 

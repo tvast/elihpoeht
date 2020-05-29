@@ -1,5 +1,6 @@
 <template>
   <div class="about">
+    <!-- <canvas id="c" ref="myCanvas"></canvas> -->
     <agile :initial-slide="3">
       <div class="slide">
         <iframe
@@ -76,52 +77,49 @@
 <script>
 import { VueAgile } from "vue-agile";
 export default {
+  data() {
+    return {
+      vueCanvas: null
+    };
+  },
   components: {
     agile: VueAgile
   },
-  data() {
-    return {};
-  }
+  methods: {},
+  mounted() {}
 };
 </script>
 
-<style scoped>
+<style >
+#app {
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  margin: 0 auto;
+  max-width: 900px;
+  padding: 30px;
+}
+
+.agile__actions {
+  margin-top: 20px;
+}
 .agile__nav-button {
   background: transparent;
   border: none;
-  color: #fff;
+  color: #ccc;
   cursor: pointer;
   font-size: 24px;
-  height: 100%;
-  position: absolute;
-  top: 0;
   -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s;
-  width: 80px;
 }
 .agile__nav-button:hover {
-  background-color: rgba(0, 0, 0, 0.5);
-  opacity: 1;
-}
-.agile__nav-button--prev {
-  left: 0;
-}
-.agile__nav-button--next {
-  right: 0;
-}
-.agile__dots {
-  bottom: 10px;
-  left: 50%;
-  position: absolute;
-  -webkit-transform: translateX(-50%);
-  transform: translateX(-50%);
+  color: #888;
 }
 .agile__dot {
   margin: 0 10px;
 }
 .agile__dot button {
-  background-color: transparent;
-  border: 1px solid #fff;
+  background-color: #eee;
+  border: none;
   border-radius: 50%;
   cursor: pointer;
   display: block;
@@ -136,14 +134,21 @@ export default {
 }
 .agile__dot--current button,
 .agile__dot:hover button {
-  background-color: #fff;
+  background-color: #888;
 }
 
 .slide {
-  display: block;
-  height: 500px;
-  -o-object-fit: cover;
-  object-fit: cover;
-  width: 100%;
+  -webkit-box-align: center;
+  align-items: center;
+  color: #fff;
+  display: -webkit-box;
+  display: flex;
+  height: 800px;
+  -webkit-box-pack: center;
+  justify-content: center;
+}
+.slide h3 {
+  font-size: 32px;
+  font-weight: 300;
 }
 </style>
